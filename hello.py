@@ -1,8 +1,8 @@
 print("Hello world!")
 
-def foo(text):
+def foo2(text):
     print("foo " + text)
 
 if __name__ == "__main__":
-    foo("baz")
-    foo("bar")
+    foo2("baz")
+    foo2("bar")
