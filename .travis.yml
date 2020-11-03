@@ -7,3 +7,9 @@ python:
 script: 
 
   - python hello.py
+
+branches:
+  only:
+    - staging
+    - trying
+    - master
