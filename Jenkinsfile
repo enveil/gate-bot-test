@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                    python hello.py
+                    python $WORKSPACE/hello.py
                 '''
             }
         }
