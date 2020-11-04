@@ -1,4 +1,1 @@
-status = [
-  "continuous-integration/travis-ci/push",
-  "continuous-integration/appveyor/branch"
-]
+status = [ "continuous-integration/jenkins/branch" ]

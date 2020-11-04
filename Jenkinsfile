@@ -16,10 +16,28 @@ pipeline {
         skipDefaultCheckout true
     }
     stages {
+         stage('Checkout SCM') {
+            steps {
+                // Because root could have taken over permissions inside a target folder
+                sh 'sudo chown -R jenkins:jenkins ${WORKSPACE}'
+
+                // This will ensure that all environment properties from a checkout() call
+                // will be set correctly on this process (ie: GIT_BRANCH, GIT_URL).
+                // Normally jenkins will handle this for us, but since the 'skipDefaultCheckout' option is set the
+                // environment variables must be set explicitly.
+                //
+                // Checkout and set environment variables properly:
+                // https://issues.jenkins-ci.org/browse/JENKINS-45198
+                script {
+                    checkout(scm).each { k,v -> env.setProperty(k, v) }
+                }
+            }
+        }
         stage('Test') {
             steps {
                 sh '''
-                    python $WORKSPACE/hello.py
+                ls
+                    python hello.py
                 '''
             }
         }
