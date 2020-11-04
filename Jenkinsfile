@@ -19,6 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
+                ls
                     python ./hello.py
                 '''
             }
