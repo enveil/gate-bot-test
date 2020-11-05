@@ -9,3 +9,4 @@ if __name__ == "__main__":
     time.sleep(30)
     foo2("baz")
     foo2("bar")
+    foo2("no")
