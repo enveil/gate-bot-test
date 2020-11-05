@@ -2,10 +2,10 @@ import time
 
 print("Hello world!")
 
-def foo(text):
+def foo2(text):
     print("foo " + text)
 
 if __name__ == "__main__":
     time.sleep(30)
-    foo("baz")
+    foo2("baz")
     foo("bar")
